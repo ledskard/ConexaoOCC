@@ -1,47 +1,37 @@
 package conexao.OCC.tarefa.Service;
 
-import java.util.Map;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.server.ResponseStatusException;
+
+import conexao.OCC.tarefa.Feign.occFeignClient;
+import conexao.OCC.tarefa.model.LoginDTO;
+
 
 @Service
 public class OCCServices {
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	protected String login() {
+	@Autowired
+	private occFeignClient occClient;
 
-	MultiValueMap<String, String> bodyRequest = new LinkedMultiValueMap<String, String>();
-	bodyRequest.add("mode", "raw");
-	bodyRequest.add("grant_type", "client_credentials");
-
-	String token = "Bearer ".concat(apiKey);
-
-	try {
-		ResponseEntity<Map<String, Object>> login = occClient.login(token, bodyRequest);
-
-		Map<String, Object> response = login.getBody();
-
-		return "Bearer ".concat((String) response.get("access_token"));
-	} catch (Exception e) {
-		throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+	public LoginDTO searchbyid() {
+		return login();
+		
 	}
+	
+	protected LoginDTO login() {
+		String apiKey ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYTc0NTc3MS02OTNkLTQxODUtOWM1OC05ODJhNTU0YzczOTgiLCJpc3MiOiJhcHBsaWNhdGlvbkF1dGgiLCJleHAiOjE1OTgwMTg5NDksImlhdCI6MTU2NjQ4Mjk0OX0=.zePYV3XnRPEFpsAgoeibgWVMGXUqHAcE9tU10Y4oRN8="; 
+		MultiValueMap<String, String> bodyRequest = new LinkedMultiValueMap<String, String>();
+		bodyRequest.add("mode", "raw");
+		bodyRequest.add("grant_type", "client_credentials");
 
-}
+		String token = "Bearer ".concat(apiKey);
+		LoginDTO login = occClient.Login(token, bodyRequest);
+
+		return login;
+		
+
+	}
+	
 }

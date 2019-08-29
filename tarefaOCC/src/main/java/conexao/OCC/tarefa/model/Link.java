@@ -3,8 +3,7 @@ package conexao.OCC.tarefa.model;
 public class Link {
 	private String rel;
 	private String href;
-    
-    
+	
 	public String getRel() {
 		return rel;
 	}

@@ -23,7 +23,7 @@ public class CommerceItem {
     private String id;
     private String state;
     private Object serviceId;
-    private LocationInventoryInfoMap locationInventoryInfoMap;
+    private Object locationInventoryInfoMap;
     private Object serviceAccountId;
     private Integer quantity;
     private Boolean pointOfNoRevision;
@@ -42,7 +42,7 @@ public class CommerceItem {
     private List<Object> lineAttributes;
     private Object catalogKey;
     private String productDisplayName;
-    private ShopperInput shopperInput;
+    private Object shopperInput;
     private Object activationDate;
     private Boolean asset;
     private Integer backOrderQuantity;
@@ -168,10 +168,10 @@ public class CommerceItem {
 	public void setServiceId(Object serviceId) {
 		this.serviceId = serviceId;
 	}
-	public LocationInventoryInfoMap getLocationInventoryInfoMap() {
+	public Object getLocationInventoryInfoMap() {
 		return locationInventoryInfoMap;
 	}
-	public void setLocationInventoryInfoMap(LocationInventoryInfoMap locationInventoryInfoMap) {
+	public void setLocationInventoryInfoMap(Object locationInventoryInfoMap) {
 		this.locationInventoryInfoMap = locationInventoryInfoMap;
 	}
 	public Object getServiceAccountId() {
@@ -282,10 +282,10 @@ public class CommerceItem {
 	public void setProductDisplayName(String productDisplayName) {
 		this.productDisplayName = productDisplayName;
 	}
-	public ShopperInput getShopperInput() {
+	public Object getShopperInput() {
 		return shopperInput;
 	}
-	public void setShopperInput(ShopperInput shopperInput) {
+	public void setShopperInput(Object shopperInput) {
 		this.shopperInput = shopperInput;
 	}
 	public Object getActivationDate() {

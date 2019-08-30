@@ -3,6 +3,8 @@ package conexao.OCC.tarefa.model;
 import java.sql.Date;
 import java.util.List;
 
+import conexao.OCC.tarefa.model.DTO.ShippingGroupPriceInfoDTO;
+
 public class Example {
 	private Boolean gwp;
     private String secondaryCurrencyCode;

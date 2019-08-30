@@ -10,7 +10,7 @@ public class TaxPriceInfo {
 	private Integer miscTax;
 	private Integer districtTax;
 	private Integer stateTax;
-	private MiscTaxInfo miscTaxInfo;
+	private Object miscTaxInfo;
 	private Integer countryTax;
 	private Integer cityTax;
 	private Boolean amountIsFinal;
@@ -71,10 +71,10 @@ public class TaxPriceInfo {
 	public void setStateTax(Integer stateTax) {
 		this.stateTax = stateTax;
 	}
-	public MiscTaxInfo getMiscTaxInfo() {
+	public Object getMiscTaxInfo() {
 		return miscTaxInfo;
 	}
-	public void setMiscTaxInfo(MiscTaxInfo miscTaxInfo) {
+	public void setMiscTaxInfo(Object miscTaxInfo) {
 		this.miscTaxInfo = miscTaxInfo;
 	}
 	public Integer getCountryTax() {

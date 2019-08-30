@@ -1,8 +1,10 @@
-package conexao.OCC.tarefa.model;
+package conexao.OCC.tarefa.model.DTO;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import conexao.OCC.tarefa.model.Link;
 
 public class LoginDTO {
 	@JsonProperty("access_token")

@@ -9,7 +9,7 @@ public class ShippingGroup {
 	private Object shipOnDate;
 	private Object actualShipDate;
 	private List<Object> trackingInfo;
-	private SpecialInstructions specialInstructions;
+	private Object specialInstructions;
 	private ShippingAddress shippingAddress;
 	private List<CommerceItemRelationship> commerceItemRelationships;
 	private String state;
@@ -56,10 +56,10 @@ public class ShippingGroup {
 	public void setTrackingInfo(List<Object> trackingInfo) {
 		this.trackingInfo = trackingInfo;
 	}
-	public SpecialInstructions getSpecialInstructions() {
+	public Object getSpecialInstructions() {
 		return specialInstructions;
 	}
-	public void setSpecialInstructions(SpecialInstructions specialInstructions) {
+	public void setSpecialInstructions(Object specialInstructions) {
 		this.specialInstructions = specialInstructions;
 	}
 	public ShippingAddress getShippingAddress() {

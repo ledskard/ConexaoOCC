@@ -7,7 +7,7 @@ public class PaymentGroup {
 	private Integer amountAuthorized;
 	private Integer amount;
 	private String gatewayName;
-	private PaymentProps paymentProps;
+	private Object paymentProps;
 	private String id;
 	private String state;
 	private Date submittedDate;
@@ -35,10 +35,10 @@ public class PaymentGroup {
 	public void setGatewayName(String gatewayName) {
 		this.gatewayName = gatewayName;
 	}
-	public PaymentProps getPaymentProps() {
+	public Object getPaymentProps() {
 		return paymentProps;
 	}
-	public void setPaymentProps(PaymentProps paymentProps) {
+	public void setPaymentProps(Object paymentProps) {
 		this.paymentProps = paymentProps;
 	}
 	public String getId() {

@@ -1,4 +1,4 @@
-package conexao.OCC.tarefa.model;
+package conexao.OCC.tarefa.model.DTO;
 
 public class ShippingGroupPriceInfoDTO {
 	private Integer secondaryCurrencyTaxAmount;

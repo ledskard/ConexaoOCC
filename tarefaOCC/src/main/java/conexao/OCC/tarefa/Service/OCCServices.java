@@ -39,5 +39,12 @@ public class OCCServices {
 		Example getOrder = occClient.SearchById(id, Bearer);
 		return getOrder;
 	}
+	public SearchAllDTO searchOrderByCpf(String cpf) {
+		String limit ="10";
+		String Bearer = "Bearer ".concat(login());
+		String minhavidaehmerda = "siteId eq esfera and profile.login eq "+ cpf; 
+		SearchAllDTO getOrderByCpf = occClient.searchOrderByCpf(limit,Bearer, minhavidaehmerda);
+		return getOrderByCpf;
+	}
 }
 

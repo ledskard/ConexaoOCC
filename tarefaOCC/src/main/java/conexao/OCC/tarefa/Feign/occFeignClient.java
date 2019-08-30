@@ -32,10 +32,19 @@ public interface occFeignClient {
 			@RequestHeader("Authorization") String bearer);
 
 	@GetMapping(value="/ccadmin/v1/orders/{id}")
-	@Headers("Content-Type: applicatin/json")
 	public Example SearchById(
 			@PathVariable(name="id") String id,
 			@RequestHeader("Authorization") String bearer);
 	
+	
+	@GetMapping(value="/ccadmin/v1/orders/")
+	@Headers("Content-Type: applicatin/json")
+	public SearchAllDTO searchOrderByCpf(
+			@RequestParam(name = "limit") String limit,
+			@RequestHeader("Authorization") String bearer,
+			@RequestParam String cpf
+			);
+			
+			
 }
 

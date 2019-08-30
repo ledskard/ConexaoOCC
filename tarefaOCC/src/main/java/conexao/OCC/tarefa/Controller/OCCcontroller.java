@@ -12,7 +12,7 @@ import conexao.OCC.tarefa.Service.OCCServices;
 public class OCCcontroller {
 	
 	
-	@Autowired
+	@Autowired  
 	private OCCServices occServices;
 	
 	@GetMapping("/getToken")
@@ -20,14 +20,19 @@ public class OCCcontroller {
 		return ResponseEntity.ok(occServices.login());
 	}
 	
-	@GetMapping("/getOrders")
+	@GetMapping("/getOrder")
 	public ResponseEntity<?> SearchTenOrders(){
 		return ResponseEntity.ok(occServices.searchTenUsers());
 	}
 	
-	@GetMapping("/getOneOrder/{id}")
+	@GetMapping("/getOrder/{id}")
 	public ResponseEntity<?> searchOneOrder(@PathVariable("id")String id){
 		return ResponseEntity.ok(occServices.SearchOneUser(id));
 	}
 		
+	@GetMapping("/getOrder/cpf/{cpf}")
+	public ResponseEntity<?> getOrdersByCpf(String cpf){
+		return ResponseEntity.ok(occServices.searchOrderByCpf(cpf));
+	}
 }
+
